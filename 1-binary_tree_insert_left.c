@@ -3,15 +3,17 @@
 /**
  *binary_tree_insert_left -  function that inserts a node
  * as the left-child of another node
- *@parent - Is a pointer to the node to insert the left-child in
- *@value - Is the value to store in the new node
+ *@parent: Is a pointer to the node to insert the left-child in
+ *@value: Is the value to store in the new node
  *Return: A pointer ti the create node, or NULL on failure
  */
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
-	binary_tree_t *root = malloc(sizeof(binary_tree_t));
-
+	binary_tree_t *root = NULL;
+	if (!parent)
+		return (NULL);
+	root = binary_tree_node(parent, value);
 	if (!root)
 	{
 		return (NULL);
